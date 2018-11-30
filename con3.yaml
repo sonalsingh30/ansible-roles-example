@@ -1,0 +1,8 @@
+ - hosts: web
+   vars:
+     test1: "Bye World"
+   tasks:
+   - name: Ansible when variable not equals example
+     debug:
+       msg: "Not Equals"
+     when: test1 != "Hello World"

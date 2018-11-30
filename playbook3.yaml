@@ -1,0 +1,9 @@
+---
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: install httpd 
+    yum: name=httpd state=present
+
+

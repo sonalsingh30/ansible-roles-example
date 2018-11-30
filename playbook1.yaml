@@ -1,0 +1,9 @@
+---
+- hosts: web
+  sudo: yes
+  gather_facts: False
+  tasks:
+  - name: Create Deploy Group
+    group: name=deploy
+
+ 

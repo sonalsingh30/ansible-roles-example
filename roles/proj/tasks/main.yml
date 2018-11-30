@@ -1,0 +1,25 @@
+---
+# tasks file for proj
+ - name: Install a webserver
+   yum: name={{w_server}} state=present
+   when: ansible_distribution == 'RHEL'
+ - name: Copy Site Files
+   template: src=templates/index.j2 dest={{ doc_root }}/index.html
+   notify:
+     - Restart Apache
+ - name: Copy Site Files
+   template: src=templates/index.j2 dest={{ doc_root1 }}/httpd.conf
+   notify:
+     - Restart Apache
+ - name: create a group called Deloitte
+   group: name=Deloitte
+ - name: crreate a user
+   user: name=Deploy group=Deloitte
+ - name: Install common software requirements
+   yum: pkg={{ item }} state=installed
+   with_items:
+      - git
+      - ntp
+      - vim
+# - name: Copy and Execute the script 
+ #  script: /home/user/userScript.sh

@@ -1,0 +1,7 @@
+- hosts: all
+  vars:
+    test2: 6
+  tasks:
+  - debug:
+      msg: "Ansible when or example"
+    when: test2%2==0 and test2%3==0

@@ -1,0 +1,9 @@
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: Ensure that Apache is installed
+    yum: name={{server1}} state=present
+  - name: Start Apache Services
+    service: name={{server1}} enabled=yes state=started
+... 

@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+    - debug:
+        msg: task1
+
+    - name: Include task list in play
+      include: pb1.yaml
+
+    - debug:
+        msg: task10

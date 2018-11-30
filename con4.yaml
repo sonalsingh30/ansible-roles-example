@@ -1,0 +1,8 @@
+- hosts: web 
+  tasks:
+  - shell: cat /etc/temp.txt
+    register: output
+  - name: Ansible when variable is empty example
+    debug:
+      msg: "empty"
+  when: output.stdout == ""

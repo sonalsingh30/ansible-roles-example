@@ -1,0 +1,7 @@
+---
+tasks:
+ - name: Ensure that Apache is installed
+   yum: name={{web_server}} state=present
+ - name: Start Apache Services
+   service: name={{web_server}} enabled=yes state=started
+...

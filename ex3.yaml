@@ -1,0 +1,13 @@
+- name: This sets up an httpd webserver
+  hosts: localhost
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: example copying file with owner and permissions
+    copy:
+      src: /etc/ansible/opt/test.sh
+      dest: /etc/ansible/tmp/test.sh
+      mode: 0644
+  - script: /etc/ansible/tmp/test.sh

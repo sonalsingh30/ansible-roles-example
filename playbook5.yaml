@@ -1,0 +1,10 @@
+- hosts: web
+  sudo: yes
+
+  tasks:
+  - name: create a file 
+    file: path=/var/www/html/index.html state=touch owner=root
+  - name: copy contents
+    blockinfile: path=/var/www/html/index.html content=yo
+
+

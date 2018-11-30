@@ -1,0 +1,5 @@
+- hosts: web
+  tasks:
+  - debug:
+      msg: "This is the expected system"
+    when: ansible_distribution == "CentOS" 

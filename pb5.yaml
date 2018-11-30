@@ -1,0 +1,11 @@
+-  hosts: web
+   sudo: yes
+
+   vars_files:
+     - "vars/external_vars.yaml"
+     
+   tasks:
+   - name: Ensure that Apache is installed
+     yum: name={{v1_server}} state=present
+   - name: Start Apache Services
+     service: name={{v1_server}} enabled=yes state=started

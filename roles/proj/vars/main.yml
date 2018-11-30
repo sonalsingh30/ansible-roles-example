@@ -1,0 +1,12 @@
+---
+# vars file for proj
+w_server: httpd
+companyname: Deloitte
+yourname: Rock
+age: 22
+emailaddress: xyz@abc.com
+http_port: 8080
+doc_dir: /ansible/
+doc_root: /var/www/html/
+max_clients: 5
+doc_root1: /etc/httpd/conf/
